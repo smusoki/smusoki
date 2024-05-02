@@ -116,9 +116,9 @@
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	// TODO: Change the variables below to customize the small multiples interface for your data
-	var polygonJSONFile = 'Data/OrangeCounty.geojson'
+	var polygonJSONFile = 'Data/kasesecounties.geojson'
 	// change the projection if needed *d3.geoAlbers()*
-	var projection = d3.geoAlbers();
+	var projection = d3.geoEquirectangular();
 	var widthheightRatio = 0.4;
 	// Relative placement of legend that ranges between 0 and 1.
 	// 0 is the start, whereas 1 i the end of each panel.
@@ -127,10 +127,10 @@
 	var legendX = 0.84, legendY = 0.5
 
 	// id attribute and the name attribute to be used in the tooltip
-	var idAttribute = 'GEOID', nameAttribute = 'GEOID';
+	var idAttribute = 'ADM3_EN', nameAttribute = 'ADM3_EN';
 
 	// Find the abbreviations of color names from https://colorbrewer2.org/
-	var colors =  colorbrewer.Reds;
+	var colors =  colorbrewer.BuGn;
 
 	// Chart/map attributes (variables) and formats based on the divs defined above
 	// For attribute 1 (the same for all others), see the description of the parameters below.
