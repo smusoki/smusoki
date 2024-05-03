@@ -232,7 +232,7 @@
               }
 
               svg.append("path")
-              .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
+              .datum(topojson.mesh(us, us.objects[featureCollection], (a, b) => a !== b))
               .attr("fill", "none")
               .attr("stroke", "white")
               .attr("stroke-linejoin", "round")
