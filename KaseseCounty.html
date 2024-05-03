@@ -53,7 +53,7 @@
 	<div class="container">
 		<div class="content">
 			<div class="row">
-					<h1>SNAP Benefits in Orange County, FL</h1>
+					<h1>Households and Subsistence in Kasese District, Uganda</h1>
 			</div>
 			<hr />
 			<div class="row">
@@ -82,12 +82,12 @@
 			<br />
 			<div class="row">
 				<div class="col-sm-6">
-					<span><p><h3 class='mapTitle'>SNAP Benefits per household</h3> percentage of household with Supplimental Nutrition Assistance Program (SNAP) Benefits.</p></span>
+					<span><p><h3 class='mapTitle'>Households headed by men </h3> Percentage of households with men leads in Kasese District, Uganda.</p></span>
 					<div id="divMap1"></div>
 					<div id="divHist1"></div>
 				</div>
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>Rate of Poverty</h3><p>Rate of households with with income at or below the Federal poverty thresholds for family size.</p>
+					<h3 class='mapTitle'>Households headed by women</h3><p>Percentage of households with women leads in Kasese District, Uganda.</p>
 					<div id="divMap2"></div>
 					<div id="divHist2"></div>
 				</div>
@@ -95,15 +95,11 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>Percentage of Black Population</h3><p> Percentage of Black/ African American population.</p>
+					<h3 class='mapTitle'>Households dependent on Subsistence</h3><p> Percentage of Households dependent on subsistence in Kasese District, Uganda.</p>
 					<div id="divMap3"></div>
 					<div id="divHist3"></div>
 				</div>
-				<div class="col-sm-6">
-					<h3 class='mapTitle'>Percentage of Seniors</h3><p>Percentage of population above 65 years old.</p>
-					<div id="divMap4"></div>
-					<div id="divHist4"></div>
-				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -139,14 +135,14 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'FoodAccess -OrangeCountyData2019_TractSNAP', att1alias = '% SNAP Benefits', att1format = '.0f',
-	att2 = 'FoodAccess -OrangeCountyData2019_PovertyRate', att2alias =  '% Poverty Rate', att2format = '.0f',
-	att3 = 'FoodAccess -OrangeCountyData2019_TractBlack', att3alias = '$ Black cititzens', att3format = '.0f',
-	att4 = 'FoodAccess -OrangeCountyData2019_TractSeniors', att4alias = '% Seniors 65+', att4format = '.0f';
+	var att1 = 'HH_H_M', att1alias = '% Households led by men', att1format = '.0f',
+	att2 = 'HH_H_F', att2alias =  '% Households led by women', att2format = '.0f',
+	att3 = 'HH_Subsist', att3alias = '% Households rely on Subsistence', att3format = '.0f',
+	//att4 = 'FoodAccess -OrangeCountyData2019_TractSeniors', att4alias = '% Seniors 65+', att4format = '.0f';
 
   // enter below all variables that should be recalculated. The order of attributes should match with
 	// the list of multiply and divide by values
-  var attributesToBeNormalized = [att1, att3, att4];
+  var attributesToBeNormalized = [att1, att2, att3];
 	// If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
 	// simply enter 1 for each value in multiplyBy.
@@ -154,7 +150,7 @@
 	// Enter the attribute name that you want to normalize (divide by).
 	// If you want to only multiply an attribute but not divide by another attribute
 	// then simply put null as the attribute name in the same order of the attribute.
-	var divideBy = ['FoodAccess -OrangeCountyData2019_OHU2010', 'FoodAccess -OrangeCountyData2019_Pop2010', 'FoodAccess -OrangeCountyData2019_Pop2010'];
+	var divideBy = ['Total_HH', 'Total_HH', 'Total_HH'];
 	// if your variables are not raw counts and they are already normalized, comment out above, and
 	//uncomment below:
 	// var attributesToBeNormalized = [];
