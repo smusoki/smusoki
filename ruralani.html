@@ -78,7 +78,7 @@
         <script>
 
         // var topoJSONFile = "data/contour.json";
-        var topoJSONFile = "data/uganda.json";
+        var topoJSONFile = "ruraldata/uganda.json";
         // enter the desired projection - note that input geojson has to be in WGS84 GCS
         var projection = d3.geoEquirectangular().rotate([87,0]);
         //enter the name of the feature or geometry collection within the topoJSONFile
@@ -86,7 +86,7 @@
         var featureCollection = "ug";
         // id field in the topojson file
         var idfield = "id"
-        var csvFile = "data/Animated.csv";
+        var csvFile = "ruraldata/Animated.csv";
         var attributeAlias = "rural(%)";
 
         // enter the minimum and maximum values of the attribute over years
