@@ -58,7 +58,7 @@
 			<hr />
 			<div class="row">
 				<div class="col-sm-4">
-					<p>Data from <a href="https://www.ubos.org/">ubos.org</a>, maps by Sopphia Musoki.</p>
+					<p>Data from <a href="https://www.ubos.org/">ubos.org</a>, maps by Sophia Musoki.</p>
 				</div>
 				<div class='col-sm-8 mapButtons'>
 					<span class="pull-right">
@@ -123,7 +123,7 @@
 	var legendX = 0.84, legendY = 0.5
 
 	// id attribute and the name attribute to be used in the tooltip
-	var idAttribute = 'ADM3_EN', nameAttribute = 'subCounty';
+	var idAttribute = 'small multiples_kasese@2_ADM3_EN', nameAttribute = 'SubCounty';
 
 	// Find the abbreviations of color names from https://colorbrewer2.org/
 	var colors =  colorbrewer.BuGn;
@@ -135,9 +135,9 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'HH_H_M', att1alias = '% Households led by men', att1format = '.0f',
-	att2 = 'HH_H_F', att2alias =  '% Households led by women', att2format = '.0f',
-	att3 = 'HH_Subsist', att3alias = '% Households rely on Subsistence', att3format = '.0f',
+	var att1 = 'small multiples_kasese@2_HH_H_M', att1alias = '% Households led by men', att1format = '.0f',
+	att2 = 'small multiples_kasese@2_HH_H_F', att2alias =  '% Households led by women', att2format = '.0f',
+	att3 = 'small multiples_kasese@2_HH_Subsist', att3alias = '% Households rely on Subsistence', att3format = '.0f',
 	//att4 = 'FoodAccess -OrangeCountyData2019_TractSeniors', att4alias = '% Seniors 65+', att4format = '.0f';
 
   // enter below all variables that should be recalculated. The order of attributes should match with
@@ -150,7 +150,7 @@
 	// Enter the attribute name that you want to normalize (divide by).
 	// If you want to only multiply an attribute but not divide by another attribute
 	// then simply put null as the attribute name in the same order of the attribute.
-	var divideBy = ['Total_HH', 'Total_HH', 'Total_HH'];
+	var divideBy = ['small multiples_kasese@2_HH_Ttl', 'small multiples_kasese@2_HH_Ttl', 'small multiples_kasese@2_HH_Ttl'];
 	// if your variables are not raw counts and they are already normalized, comment out above, and
 	//uncomment below:
 	// var attributesToBeNormalized = [];
