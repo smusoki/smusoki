@@ -19,7 +19,7 @@
   <script src="https://d3js.org/queue.v1.min.js"></script>
   <script src="https://d3js.org/colorbrewer.v1.min.js"></script>
 
-  <title>An Animated Choropleth Map of Uganda's Rural Population by disctrict</title>
+  <title>An Animated Choropleth Map of Uganda's Rural Population by district</title>
 </head>
 
 <body>
@@ -80,11 +80,11 @@
         </ol>
         <script>
 
-        var topoJSONFile = "data_new/Ug_Dempgraphics.json";
+        var topoJSONFile = "data_new/ugT.json";
 		var projection = d3.geoEquirectangular().rotate([87,0]).fitExtent([10, 10]);
         //enter the name of the feature or geometry collection within the topoJSONFile
         // for example, for the default dataset us.objects.counties, enter counties
-        var featureCollection = "Ug_Dempgraphics";
+        var featureCollection = "ugT";
         var csvFile = "data_new/Animatedmap_Data.csv";
         var attributeAlias = "Rural Population Rate (%)";
 
@@ -192,8 +192,8 @@
           .tween("year", tweenYear)
           //.each();
 
-          Ug_Dempgraphics = svg.append("g")
-          .attr("class", "Ug_Dempgraphics")
+          ugT = svg.append("g")
+          .attr("class", "ugT")
           .selectAll("path")
           .data(topojson.feature(polygons, polygons.objects[featureCollection]).features)
           .enter()
@@ -201,7 +201,7 @@
           .attr("d", path)
           .call(style,currentYear)
 
-          function style(Ug_Dempgraphics, year){
+          function style(ugT, year){
             newunemployment = interpolateData(year);
 
             var rateById = {};
@@ -217,7 +217,7 @@
               nameById[d.code] = d.name;
             });
 
-            Ug_Dempgraphics.style("fill", function(d) { return color(rateById[d.id]); })
+            ugT.style("fill", function(d) { return color(rateById[d.id]); })
             .on("mouseover", function(d) {
               div.transition()
               .duration(200)
@@ -270,7 +270,7 @@
               // Updates the display to show the specified year.
               function displayYear(year) {
                 currentYear = year;
-                Ug_Dempgraphics.call(style,year)
+                ugT.call(style,year)
                 label.text(Math.round(year));
               }
 
